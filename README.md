@@ -176,6 +176,9 @@ Reveal.initialize({
 
 	// Display the page number of the current slide
 	slideNumber: false,
+    
+    // Display logo
+    logo: false,
 
 	// Push each slide change to the browser history
 	history: false,
@@ -746,6 +749,16 @@ Reveal.configure({ slideNumber: 'c/t' });
 
 ```
 
+### Logo
+
+If you would like to display a logo you can do so using the ```logo``` configuration value.
+
+```javascript
+// Shows a logo
+Reveal.configure({ logo: true });
+```
+
+Make an **img** folder under the root, and create a symbolic link named 'logo' in it pointing to the logo image you want to use.
 
 ### Overview mode
 

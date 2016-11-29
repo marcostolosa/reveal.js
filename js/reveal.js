@@ -58,7 +58,7 @@
 			// Display the page number of the current slide
 			  slideNumber: false,
 
-			  // Display the page number of the current slide
+			  // Display logo
 			  logo: false,
 
 			// Push each slide change to the browser history
