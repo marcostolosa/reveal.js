@@ -158,3 +158,8 @@ ul, ol, div, p {
 	font-size: 14px;
 }
 
+/* Display logo when 'logo' is enabled */
+.reveal .logo-pdf {
+	display: block;
+	position: absolute;
+}

@@ -368,6 +368,24 @@ body {
 }
 
 /*********************************************
+ * LOGO
+ *********************************************/
+
+.reveal .logo {
+	position: fixed;
+	display: block;
+	left: 8px;
+	bottom: 8px;
+	z-index: 31;
+  width: 80px;   
+  height: 80px;
+  background-image: url('../img/logo');
+  background-size: 80px;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+}
+
+/*********************************************
  * SLIDES
  *********************************************/
 

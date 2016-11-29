@@ -56,7 +56,10 @@
 			progress: true,
 
 			// Display the page number of the current slide
-			slideNumber: false,
+			  slideNumber: false,
+
+			  // Display the page number of the current slide
+			  logo: false,
 
 			// Push each slide change to the browser history
 			history: false,
@@ -490,7 +493,10 @@
 			'<button class="navigate-down" aria-label="below slide"></button>' );
 
 		// Slide number
-		dom.slideNumber = createSingletonNode( dom.wrapper, 'div', 'slide-number', '' );
+		  dom.slideNumber = createSingletonNode( dom.wrapper, 'div', 'slide-number', '' );
+
+		  // Logo
+		  dom.logo = createSingletonNode( dom.wrapper, 'div', 'logo', '' );
 
 		// Element containing notes that are visible to the audience
 		dom.speakerNotes = createSingletonNode( dom.wrapper, 'div', 'speaker-notes', null );
@@ -639,6 +645,14 @@
 					numberElement.innerHTML = formatSlideNumber( slideNumberH, '.', slideNumberV );
 					background.appendChild( numberElement );
 				}
+
+				  // Inject logo if `logo` is enabled
+				  if( config.logo ) {
+					    var logoElement = document.createElement( 'div' );
+					    logoElement.classList.add( 'logo' );
+					    logoElement.classList.add( 'logo-pdf' );
+					    background.appendChild( logoElement );
+				  }
 			}
 
 		} );
@@ -908,7 +922,8 @@
 
 		dom.controls.style.display = config.controls ? 'block' : 'none';
 		dom.progress.style.display = config.progress ? 'block' : 'none';
-		dom.slideNumber.style.display = config.slideNumber && !isPrintingPDF() ? 'block' : 'none';
+		  dom.slideNumber.style.display = config.slideNumber && !isPrintingPDF() ? 'block' : 'none';
+		  dom.logo.style.display = config.logo && !isPrintingPDF() ? 'block' : 'none';
 
 		if( config.shuffle ) {
 			shuffle();
