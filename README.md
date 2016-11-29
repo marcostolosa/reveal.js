@@ -31,6 +31,7 @@ reveal.js comes with a broad range of features including [nested slides](https:/
   - [Fragment events](#fragment-events)
   - [Code syntax highlighting](#code-syntax-highlighting)
   - [Slide number](#slide-number)
+  - [Logo](#Logo)
   - [Overview mode](#overview-mode)
   - [Fullscreen mode](#fullscreen-mode)
   - [Embedded media](#embedded-media)
