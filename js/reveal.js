@@ -28,8 +28,8 @@
 	// The reveal.js version
 	var VERSION = '3.3.0';
 
-	var SLIDES_SELECTOR = '.slides section',
-		HORIZONTAL_SLIDES_SELECTOR = '.slides>section',
+	  var SLIDES_SELECTOR = '.slides section',
+		    HORIZONTAL_SLIDES_SELECTOR = '.slides>section',
 		VERTICAL_SLIDES_SELECTOR = '.slides>section.present>section',
 		HOME_SLIDE_SELECTOR = '.slides>section:first-of-type',
 		UA = navigator.userAgent,
@@ -599,8 +599,8 @@
 				var numberOfPages = Math.max( Math.ceil( contentHeight / pageHeight ), 1 );
 
 				// Center slides vertically
-				if( numberOfPages === 1 && config.center || slide.classList.contains( 'center' ) ) {
-					top = Math.max( ( pageHeight - contentHeight ) / 2, 0 );
+				  if( numberOfPages === 1 && config.center || slide.classList.contains( 'center' )  || slide.getAttribute('id') == "sec-title-slide" ) {
+					    top = Math.max( ( pageHeight - contentHeight ) / 2, 0 );
 				}
 
 				// Position the slide inside of the page
@@ -635,7 +635,7 @@
 				}
 
 				// Inject slide numbers if `slideNumbers` are enabled
-				if( config.slideNumber ) {
+				  if( config.slideNumber && slide.getAttribute('id') != "sec-title-slide") {
 					var slideNumberH = parseInt( slide.getAttribute( 'data-index-h' ), 10 ) + 1,
 						slideNumberV = parseInt( slide.getAttribute( 'data-index-v' ), 10 ) + 1;
 
@@ -647,7 +647,7 @@
 				}
 
 				  // Inject logo if `logo` is enabled
-				  if( config.logo ) {
+				  if( config.logo && slide.getAttribute('id') != "sec-title-slide") {
 					    var logoElement = document.createElement( 'div' );
 					    logoElement.classList.add( 'logo' );
 					    logoElement.classList.add( 'logo-pdf' );
@@ -1662,7 +1662,7 @@
 					continue;
 				}
 
-				if( config.center || slide.classList.contains( 'center' ) ) {
+				  if( config.center || slide.classList.contains( 'center' )  || slide.getAttribute('id') == "sec-title-slide") {
 					// Vertical stacks are not centred since their section
 					// children will be
 					if( slide.classList.contains( 'stack' ) ) {
@@ -2630,8 +2630,16 @@
 			}
 
 			dom.slideNumber.innerHTML = formatSlideNumber( value[0], value[1], value[2] );
-		}
 
+        // if ( currentSlide.getAttribute('id') == "sec-title-slide" ) {
+        //     dom.slideNumber.style.visibility = 'hidden';
+        //     dom.logo.style.visibility = 'hidden';
+        // }
+        // else {
+        //     dom.slideNumber.style.visibility = 'visible';
+        //     dom.logo.style.visibility = 'visible';
+        // }
+		}
 	}
 
 	/**
